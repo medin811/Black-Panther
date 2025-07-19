@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Black Panther Baseball</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <header>
+    <h1>Black Panther Baseball</h1>
+  </header>
+
+  <section id="mensagem-institucional" class="mensagem-institucional">
+    <p>
+      O Black Panther Baseball convida você a fazer parte desta família. Somos uma equipe de beisebol amadora, que engloba desde praticantes iniciantes até veteranos. Oferecemos a oportunidade da prática esportiva que contribui para a saúde mental e física. <br>
+      Entre em contato para mais informações e venha fazer parte deste maravilhoso esporte.
+    </p>
+  </section>
+
+  <nav>
+    <ul>
+      <li><a href="#lideres">Líderes</a></li>
+      <li><a href="#jogadores">Jogadores</a></li>
+      <li><a href="#jogos">Jogos</a></li>
+      <li><a href="#estatisticas">Estatísticas</a></li>
+      <li><a href="#noticias">Notícias</a></li>
+      <li><a href="#quem-somos"><i class="fas fa-users"></i> Quem Somos</a></li>
+      <li><a href="#Local e Horario "><i class="fas fa-map-marker-alt"></i> Local e Horario</a></li>
+      <li><a href="#mensalidades"><i class="fas fa-money-bill-wave"></i> Mensalidades</a></li>
+      <li><a href="#quem-pode"><i class="fas fa-user-check"></i> Quem Pode Participar</a></li>
+      <li><a href="#torneios"><i class="fas fa-trophy"></i> Torneios</a></li>
+      <li><a href="#comentarios"><i class="fas fa-comments"></i> Comentários</a></li>
+      <li><a href="#contatos"><i class="fas fa-phone-alt"></i> Contato</a></li>
+    </ul>
+  </nav>
+
+  <section id="lideres">
+    <h2>Líderes do Time</h2>
+    <div class="lideres-container">
+      <div class="lider">
+        <img src="images/ramon.jpg" alt="Ramon" class="lider-img">
+        <p><strong>Ramon</strong><br>Líder</p>
+      </div>
+      <div class="lider">
+        <img src="images/miguel.jpg" alt="Miguel" class="lider-img">
+        <p><strong>Miguel</strong><br>Líder</p>
+      </div>
+      <div class="lider">
+        <img src="images/wilber.jpg" alt="Wilber" class="lider-img">
+        <p><strong>Wilber</strong><br>Líder</p>
+      </div>
+      <div class="lider">
+        <img src="images/angel.jpg" alt="Angel" class="lider-img">
+        <p><strong>Angel</strong><br>Controlador das Redes e Sistema</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="jogadores">
+    <h2>Jogadores</h2>
+    <form id="formJogadores" onsubmit="adicionarJogador(event)">
+      <input type="text" id="nomeJogador" placeholder="Nome" required>
+      
+      <label for="posicaoJogador">Posição:</label>
+      <select id="posicaoJogador" required>
+        <option value="">Selecione uma Posição</option>
+        <option value="Primeira Base">Primeira Base</option>
+        <option value="Segunda Base">Segunda Base</option>
+        <option value="Terceira Base">Terceira Base</option>
+        <option value="Interbases">Interbases (Shortstop)</option>
+        <option value="Arremessador">Arremessador (Pitcher)</option>
+        <option value="Receptor">Receptor (Catcher)</option>
+        <option value="Campo Esquerdo">Campo Esquerdo</option>
+        <option value="Campo Central">Campo Central</option>
+        <option value="Campo Direito">Campo Direito</option>
+        <option value="Bateador Designado">Bateador Designado (DH)</option>
+        
+      </select>
+
+      <input type="number" id="numeroJogador" placeholder="Número" required>
+      <button type="submit">Adicionar Jogador</button>
+    </form>
+
+    <table id="tabelaJogadores">
+      <thead>
+        <tr><th>Nome</th><th>Posição</th><th>Número</th><th>Ações</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <section id="jogos">
+    <h2>Jogos</h2>
+    <form id="formJogos" onsubmit="adicionarJogo(event)">
+      <input type="date" id="dataJogo" required>
+      <input type="text" id="adversarioJogo" placeholder="Adversário" required>
+      <input type="text" id="resultadoJogo" placeholder="Resultado" required>
+      <button type="submit">Adicionar Jogo</button>
+    </form>
+    <table id="tabelaJogos">
+      <thead>
+        <tr><th>Data</th><th>Adversário</th><th>Resultado</th><th>Ações</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <section id="estatisticas">
+    <h2>Estatísticas</h2>
+    <form id="formEstatisticas" onsubmit="adicionarEstatistica(event)">
+      <input type="text" id="descricaoEstatistica" placeholder="Descrição" required>
+      <input type="number" id="valorEstatistica" placeholder="Valor" required>
+      <button type="submit">Adicionar Estatística</button>
+    </form>
+    <table id="tabelaEstatisticas">
+      <thead>
+        <tr><th>Estatística</th><th>Valor</th><th>Ações</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <section id="noticias">
+  <h2>Notícias</h2>
+  <form id="formNoticias" onsubmit="adicionarNoticia(event)">
+    <input type="text" id="tituloNoticia" placeholder="Título" required>
+    
+    <select id="temaNoticia" required>
+      <option value="" disabled selected>Escolha o tema</option>
+      <option value="Esporte">Esporte</option>
+      <option value="Evento">Evento</option>
+      <option value="Treinamento">Treinamento</option>
+      <option value="Campeonato">Campeonato</option>
+      <option value="Comunicado">Comunicado</option>
+    </select>
+
+    <textarea id="conteudoNoticia" placeholder="Conteúdo" required></textarea>
+    <button type="submit">Adicionar Notícia</button>
+  </form>
+
+  <table id="tabelaNoticias">
+    <thead>
+      <tr>
+        <th>Título</th>
+        <th>Tema</th>
+        <th>Conteúdo</th>
+        <th>Data</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</section>
+
+
+  <section id="quem-somos">
+    <h2><i class="fas fa-users"></i> Quem Somos</h2>
+    <p>Somos o Black Panther Baseball, uma equipe formada por apaixonados pelo esporte que valorizam amizade, respeito e crescimento em equipe.</p>
+  </section>
+  
+  <section id="Local e Horario">
+    <h2><i class="fas fa-map-marker-alt"></i> Local e Horario</h2>
+    <p>Parque Ecológico do Tietê, ao lado da rampa de acesso à estação Engenheiro Goulart da CPTM.Aos
+        sábados às 13:30hs</p>
+  </section>
+  
+  <section id="mensalidades">
+    <h2><i class="fas fa-money-bill-wave"></i> Mensalidades</h2>
+    <p>A mensalidade é de apenas <strong>R$ 60,00</strong>. pagamento até dia 15
+    A mensalidade dá o direito de associar-se ao BlackPanther e ter acesso a vários benefícios.</p>
+  </section>
+  
+  <section id="quem-pode">
+    <h2><i class="fas fa-user-check"></i> Quem Pode Participar</h2>
+    <p>Todos são bem-vindos! Desde iniciantes até veteranos, basta ter vontade de aprender e jogar!</p>
+  </section>
+  
+  <section id="torneios">
+    <h2><i class="fas fa-trophy"></i> Torneios</h2>
+    <p> Campeonatos amadores regulares, amistosos, e torneios isolados.</p>
+  </section>
+  
+  <section id="comentarios">
+    <h2><i class="fas fa-comments"></i> Comentários dos Treinos</h2>
+    <form id="formComentarios" onsubmit="adicionarComentario(event)">
+      <input type="text" id="nomeComentario" placeholder="Seu nome" required>
+      <textarea id="textoComentario" placeholder="O que achou dos treinos?" required></textarea>
+      <button type="submit">Enviar Comentário</button>
+    </form>
+    <div id="listaComentarios"></div>
+  </section>
+
+  <section id="contatos">
+    <h2><i class="fas fa-phone-alt"></i> Contatos</h2>
+    <p>Siga-nos nas redes sociais:</p>
+    
+    <ul class="redes">
+  <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a> </li>
+  <li>
+    <a href="https://www.instagram.com/blackpanther.baseball?utm_source=qr&igsh=YzU0YjFjMzBvcHBp" target="_blank">
+      <i class="fab fa-instagram"></i> Instagram
+    </a>
+  </li>
+  <li><a href="#"><i class="fab fa-tiktok"></i> TikTok</a></li>
+  
+</ul>
+
+    <p>Telefone: <a href="tel:+5511999016677">+55 (11) 99901-6677</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Black Panther Baseball</p>
+  </footer>
+
+  <script src="script.js"></script>
+
+  
+</script>
+
+</body>
+</html> 
